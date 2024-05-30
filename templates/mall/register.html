@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  class="j-body-container"
+  style="display: flex; flex-direction: column; align-items: center"
+>
+  <div style="width: 800px">
+    <h5 class="my-3 border-bottom pb-2">제품 등록하기</h5>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{form.media}} {{ form.as_p }}
+      <button
+        type="submit"
+        class="card-button"
+        style="width: 100px; margin-top: 20px"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

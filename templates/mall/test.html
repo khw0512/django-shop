@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="j-body-container" style="text-align: center">
+  <p style="font-size: 70px; color: indigo">Date Picker</p>
+
+  <p>선택일 : <input type="text" id="date" /></p>
+
+  <p>위 박스 클릭하여 캘린더 표시 및 날짜 선택</p>
+
+  <p id="date_full">- 년 - 월 - 일</p>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    $("#date").datepicker({
+      dateFormat: "yy/mm/dd",
+      dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+      monthNames: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월",
+      ],
+      onSelect: function (d) {
+        alert(d + " 선택되었습니다");
+
+        var arr = d.split("/");
+        var year = arr[0];
+        var month = arr[1];
+        var day = arr[2];
+
+        //요일 가져오기
+        //데이터를 먼저 가져오고 (숫자로 넘어옴)
+        var date = new Date(
+          $("#date").datepicker({ dateFormat: "yy/mm/dd" }).val()
+        );
+        //일요일 0~
+
+        week = new Array("일", "월", "화", "수", "목", "금", "토");
+
+        $("#date_full").text(
+          year +
+            "년 " +
+            month +
+            "월 " +
+            day +
+            "일 " +
+            week[date.getDay()] +
+            "요일"
+        );
+      },
+    });
+  });
+</script>
+{% endblock %}

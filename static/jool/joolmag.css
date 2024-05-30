@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'SejonghospitalBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/SejonghospitalBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Noto Sans KR',
+        sans-serif;
+}
+
+a {
+    text-decoration-line: none;
+    color: var(--text-color);
+}
+
+.mainbg {
+    height:100%;
+    background-color:#00539C;
+    margin: 0;
+    padding: 0;
+    overflow-y:auto;
+    overflow-x: auto;
+}
+
+.centeritem{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin:20px 40px 0 0 ;
+}
+
+.lan-switch {
+    color:#EEA47F;
+    margin: 0 5px 0 5px;
+    font-size: 13px;
+}
+
+.info-icon {
+    color:#EEA47F;
+    margin:0 10px 0 10px;
+}
+
+.smallbox{
+    width:20px;
+}
+
+.j-nav-container {
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    margin: 80px 0 0 0;
+    flex-direction: column;
+    align-items: center;;
+}
+
+.j-nav-container-2 {
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    margin: 20px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.j-nav-items {
+    display: flex;
+    color: #EEA47F;
+    margin:20px 0 20px 0;
+}
+
+.j-navbar-brand {
+    display: flex;
+    margin:20px 0 20px 0;
+}
+
+.j-nav-item {
+    font-size: 17px;
+    text-align: center;
+    padding: 0 30px 0 30px;
+}
+
+
+.j-nav-item a {
+    font-weight: 600;
+}
+
+.j-nav-item a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 1px #EEA47F;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    margin-top:-12px;
+}
+
+.j-nav-item a:hover:after {
+    transform: scaleX(1);
+}
+
+.main-img{
+    margin: 30px 0 20px 0;
+    width:400px;
+}
+
+.about-img{
+    margin: 30px 0 0 0;
+    width:500px;
+}
+
+.rights{
+    margin: 20px 0 0 0;
+    color:#EEA47F;
+    font-size: 13px;;
+}
+
+.about-text {
+    margin: 10px 0 0 0;
+    width: 450px;
+    color: #EEA47F;
+}

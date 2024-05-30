@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static%} {% block link%}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'mall/indexStyle.css' %}"
+/>
+{% endblock %} {% block content %}
+<div class="j-body-container">
+  <div class="card-box">
+    {% for stuff in stuffs %}
+    <div>
+      <div class="card">
+        <img
+          src="/media/{{stuff.image}}"
+          class="card-img-top"
+          style="height: 260px; object-fit: contain"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ stuff.name }}</h5>
+          <p class="card-text">{{ stuff.price }} $</p>
+        </div>
+        <div class="card-body">
+          <a
+            href="{% url 'mall:delstuff' stuff.id %}"
+            style="color: red; background-color: #f5d042"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

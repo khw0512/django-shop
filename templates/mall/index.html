@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static%} {% block link%}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'mall/indexStyle.css' %}"
+/>
+{% endblock %} {% block content %}
+<div class="j-body-container">
+  <div class="card-container">
+    <div class="card-box">
+      {% for stuff in stuffs %}
+      <div>
+        <div class="card">
+          <img
+            src="/media/{{stuff.image}}"
+            class="card-img-top"
+            style="height: 260px; object-fit: contain"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ stuff.name }}</h5>
+            <p class="card-text">{{ stuff.price }} 원</p>
+          </div>
+          <div class="card-body">
+            <a class="card-button" href="{% url 'mall:buyAtIndex' stuff.id %}"
+              >BUY</a
+            >
+            <a class="card-button" href="{% url 'mall:addcart' stuff.id %}"
+              >ADD CART</a
+            >
+            <a class="card-button" href="{% url 'mall:detail' stuff.id %}"
+              >Detail</a
+            >
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

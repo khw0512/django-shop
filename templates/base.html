@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JOOL ART</title>
+    <!-- FONT -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;400;600&display=swap");
+    </style>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'mall/indexStyle.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+      type="text/css"
+    />
+    <!-- jQuery 기본 js파일 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- jQuery UI 라이브러리 js파일 -->
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    {% block link %} {% endblock %}
+  </head>
+  <body>
+    <nav class="j-nav-container">
+      <div class="j-navbar-brand">
+        <a href="{% url 'mall:joolmain' %}">JOOL ART</a>
+      </div>
+      <div class="j-nav-items">
+        <div class="j-nav-item">
+          <a class="nav-link active" href="{% url 'mall:index' %}">SHOP</a>
+        </div>
+        <div class="j-nav-item">
+          <a class="nav-link" href="{% url 'mall:cart' %}">CART</a>
+        </div>
+        <div class="j-nav-item">
+          <a class="nav-link" href="{% url 'mall:info' %}">MY ORDER</a>
+        </div>
+        <div class="j-nav-item">
+          {% if user.is_authenticated %}
+          <div style="width: 50px"><p>|</p></div>
+          {% endif %}
+        </div>
+        <div class="j-nav-item-RD">
+          {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'mall:register' %}"> Register</a>
+          {% endif %}
+        </div>
+        <div class="j-nav-item-RD">
+          {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'mall:delpage' %}"> Delete</a>
+          {% endif %}
+        </div>
+      </div>
+      <div>
+        <div class="j-nav-itme-login-container">
+          <div class="j-nav-item-login">
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'common:logout' %}"
+              >{{ user.username }} (LOGOUT)</a
+            >
+            {% else %}
+            <a class="nav-link active" href="{% url 'common:login' %}">LOGIN</a>
+            {% endif %}
+          </div>
+          <div class="j-nav-item-login">
+            {% if user.is_authenticated %} {% else %}
+            <a class="nav-link" href="{% url 'common:signup' %}">SIGNUP</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

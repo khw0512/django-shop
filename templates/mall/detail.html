@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% load static %} {% block link%}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'mall/detailStyle.css' %}"
+/>
+{% endblock %} {% block content %} {% if stuff %}
+
+<div class="j-body-container">
+  <div class="card" style="width: 95%">
+    <img
+      style="max-height: 500px; object-fit: contain"
+      src="/media/{{stuff.image}}"
+      alt="..."
+    />
+
+    <div class="card-body">
+      <div class="sub-imgs">
+        {% for image in images %}
+        <img
+          src="/media/{{image.images}}"
+          class="card-img-top"
+          style="height: 100px; object-fit: contain"
+          alt="..."
+        />
+        {% endfor %}
+      </div>
+      <h5 class="card-title form-label">{{stuff.name}}</h5>
+      <div class="desc">{{ stuff.detail|safe }}</div>
+      <p class="card-text form-label">Price : {{ stuff.price }} 원</p>
+      <p class="card-text">
+        <small class="text-muted">Last updated at {{stuff.pub_date}}</small>
+      </p>
+      <a
+        href="{% url 'mall:update' stuff.id %}"
+        style="color: red; background-color: #f5d042"
+        >EDIT</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endif %} {% endblock %}

@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'SejonghospitalBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/SejonghospitalBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Noto Sans KR',
+    sans-serif;
+}
+
+body{
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+}
+a{
+    text-decoration-line: none;
+    color: var(--text-color);
+}
+
+.page-title {
+    margin-left: 20px;
+    font-size:2rem;
+    font-family: 'Tektur',sans-serif;
+}
+
+.j-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 20px 10px 5px 10px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.j-nav-container {
+    width: 100%;
+    z-index:100;
+    position:fixed;
+    display: flex;
+    padding-left:20px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.j-nav-items {
+    display: flex;
+}
+
+.j-navbar-brand {
+    display: flex;
+}
+
+.j-navbar-brand a {
+    color:#5F4B8B;
+    font-size: 2em;
+    padding: 10px 10px 10px 10px;
+}
+
+.j-navbar-nav {
+    padding-right: 20px;
+    text-decoration-line: none;
+    list-style: none;
+    display: flex;
+}
+
+.j-nav-item {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+}
+
+.j-nav-itme-login-container {
+    display:flex;
+    ;
+}
+
+.j-nav-item a {
+    font-weight: 600;
+}
+
+.j-nav-item-RD {
+    font-size:  15px;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+}
+
+.j-nav-item-login a {
+    text-align: center;
+    padding: 20px 30px 20px 10px;
+    font-weight: 600;
+}
+
+.j-nav-item:hover {
+    color:chartreuse;
+}
+
+.j-nav-item-RD:hover {
+    color: chartreuse;
+}
+
+.j-nav-item-login:hover {
+    color:chartreuse;
+}
+
+.j-nav-item a:after {
+    display:block;
+    width:120px;
+    content: '';
+    border-bottom: solid 2px black;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.j-nav-item a:hover:after {
+    transform: scaleX(1);
+}
+
+
+
+.j-body-container {
+    padding: 100px 20px 0px 20px;
+}
+
+.card-container {
+    display:flex;
+    justify-content: center;
+}
+
+.card-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left:20%;
+    padding-right:20%;
+}
+
+.card {
+    width:18rem;
+    margin:10px 10px 10px 10px;
+}
+
+.card-button {
+    font-size: 13px;
+    border: solid #5F4B8B 1px;
+    border-radius: 10px;;
+    padding: 5px 10px 5px 10px;
+    background-color: #E69A8D;
+    font-family: 'Tektur',
+    sans-serif;
+}
+
+.card-button:hover {
+    color:chartreuse;
+}
+
+.card-title {
+    font-family: 'Tektur',
+    sans-serif;
+}
+
+.card-text {
+    font-family: 'Tektur',
+    sans-serif;
+}
+
+.desc {
+    border: solid 1px chartreuse;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0 20px 0;
+}
+
+.sub-imgs {
+    display: flex;
+    justify-content:center;
+}
+
+.sub-imgs img {
+    width:auto;
+    margin: 10px 20px 10px 20px;
+}
